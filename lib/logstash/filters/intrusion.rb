@@ -15,8 +15,9 @@ class LogStash::Filters::Intrusion < LogStash::Filters::Base
   include LocationConstant
   config_name "intrusion"
 
-  config :memcached_server,  :validate => :string, :default => "",  :required => false
-   
+  config :memcached_server,   :validate => :string, :default => "",  :required => false
+  config :update_stores_rate, :validate => :number,  :default => 60,                             :required => false
+
   public
 
   def register
@@ -25,7 +26,7 @@ class LogStash::Filters::Intrusion < LogStash::Filters::Base
                     NAMESPACE, SERVICE_PROVIDER, SERVICE_PROVIDER_UUID]
     @memcached_server = MemcachedConfig::servers if @memcached_server.empty?
     @memcached = Dalli::Client.new(@memcached_server, {:expires_in => 0})
-    @store_manager = StoreManager.new(@memcached)
+    @store_manager = StoreManager.new(@memcached, @update_stores_rate)
     @last_refresh_stores = nil
   end
 
