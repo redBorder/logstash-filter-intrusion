@@ -184,12 +184,6 @@ module LocationConstant
   FILE_HOSTNAME = "file_hostname" unless defined? FILE_HOSTNAME
   GROUP_UUID = "group_uuid" unless defined? GROUP_UUID
   CLIENT_NAME = "client_name" unless defined? CLIENT_NAME
-  # Darklist unless defined? 
-  DARKLIST_SCORE = "darklist_score" unless defined? DARKLIST_SCORE
-  DARKLIST_SCORE_NAME = "darklist_score_name" unless defined? DARKLIST_SCORE_NAME
-  DARKLIST_PROTOCOL = "darklist_protocol" unless defined? DARKLIST_PROTOCOL
-  DARKLIST_DIRECTION = "darklist_direction" unless defined? DARKLIST_DIRECTION
-  DARKLIST_CATEGORY = "darklist_category" unless defined? DARKLIST_CATEGORY
   # NMSP unless defined? 
   NMSP_AP_MAC = "ap_mac" unless defined? NMSP_AP_MAC
   NMSP_RSSI = "rssi" unless defined? NMSP_RSSI
